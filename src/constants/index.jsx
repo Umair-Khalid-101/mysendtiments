@@ -9,4 +9,6 @@ export const colors = {
   gray: "#7A7A7A",
   blue: "#7640EE",
   white: "#FFFFFF",
+  line: "#C2C3CD",
+  lightgray: "#CCCCCC",
 };
