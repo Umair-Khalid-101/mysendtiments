@@ -1,12 +1,7 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  TurboModuleRegistry,
-} from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
 
 // SVGS
 import { SignUpSvg, GiftSvg } from "../../svgs";
@@ -15,6 +10,8 @@ import { SignUpSvg, GiftSvg } from "../../svgs";
 import { colors, font } from "../../constants";
 
 export default function SignUp() {
+  const navigation = useNavigation();
+
   return (
     <SafeAreaView style={styles.container}>
       <SignUpSvg />
@@ -39,7 +36,10 @@ export default function SignUp() {
         </TouchableOpacity>
       </View>
       <View style={styles.SignInButtonContainer}>
-        <TouchableOpacity style={styles.SignInButton}>
+        <TouchableOpacity
+          style={styles.SignInButton}
+          onPress={() => navigation.navigate("SignIn")}
+        >
           <Text style={styles.SignInButtonText}>Sign In to your Account</Text>
         </TouchableOpacity>
       </View>
@@ -51,7 +51,10 @@ export default function SignUp() {
       </View>
 
       <View style={styles.RegistrationButtonContainer}>
-        <TouchableOpacity style={styles.RegistrationButton}>
+        <TouchableOpacity
+          style={styles.RegistrationButton}
+          onPress={() => navigation.navigate("Registration")}
+        >
           <Text style={styles.RegistrationButtonText}>Create an Account</Text>
         </TouchableOpacity>
       </View>

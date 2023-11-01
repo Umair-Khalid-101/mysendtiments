@@ -11,4 +11,5 @@ export const colors = {
   white: "#FFFFFF",
   line: "#C2C3CD",
   lightgray: "#CCCCCC",
+  disabledButton: "#E8E3F6",
 };
