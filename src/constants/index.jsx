@@ -12,4 +12,5 @@ export const colors = {
   line: "#C2C3CD",
   lightgray: "#CCCCCC",
   disabledButton: "#E8E3F6",
+  passwordBox: "#DDF1F8",
 };
