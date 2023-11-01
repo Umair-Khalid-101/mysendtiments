@@ -98,37 +98,41 @@ export default function Registration() {
           />
 
           <View style={styles.NameContainer}>
-            <Controller
-              control={control}
-              render={({ field: { onChange, value } }) => (
-                <TextInput
-                  style={styles.FirstName}
-                  onChangeText={(value) => onChange(value.trim())}
-                  value={value}
-                  placeholder="First Name*"
-                />
+            <View style={styles.halfInput}>
+              <Controller
+                control={control}
+                render={({ field: { onChange, value } }) => (
+                  <TextInput
+                    style={styles.FirstName}
+                    onChangeText={(value) => onChange(value.trim())}
+                    value={value}
+                    placeholder="First Name*"
+                  />
+                )}
+                name="firstname"
+              />
+              {errors.firstname && (
+                <Text style={styles.errors}>{errors.firstname.message}</Text>
               )}
-              name="firstname"
-            />
-            {errors.firstname && (
-              <Text style={styles.errors}>{errors.firstname.message}</Text>
-            )}
+            </View>
 
-            <Controller
-              control={control}
-              render={({ field: { onChange, value } }) => (
-                <TextInput
-                  style={styles.FirstName}
-                  onChangeText={(value) => onChange(value.trim())}
-                  value={value}
-                  placeholder="Last Name*"
-                />
+            <View style={styles.halfInput}>
+              <Controller
+                control={control}
+                render={({ field: { onChange, value } }) => (
+                  <TextInput
+                    style={styles.FirstName}
+                    onChangeText={(value) => onChange(value.trim())}
+                    value={value}
+                    placeholder="Last Name*"
+                  />
+                )}
+                name="lastname"
+              />
+              {errors.firstname && (
+                <Text style={styles.errors}>{errors.lastname.message}</Text>
               )}
-              name="lastname"
-            />
-            {errors.firstname && (
-              <Text style={styles.errors}>{errors.firstname.message}</Text>
-            )}
+            </View>
           </View>
           <Controller
             control={control}
@@ -284,7 +288,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.line,
     height: 50,
-    width: "43%",
+    width: "100%",
     marginTop: "5%",
     borderRadius: 12,
     paddingLeft: 20,
@@ -313,6 +317,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+  },
+  halfInput: {
+    width: "43%",
   },
   header: {
     display: "flex",
