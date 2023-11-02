@@ -112,7 +112,9 @@ export default function Registration() {
                 name="firstname"
               />
               {errors.firstname && (
-                <Text style={styles.errors}>{errors.firstname.message}</Text>
+                <Text style={styles.halfInputErrors}>
+                  {errors.firstname.message}
+                </Text>
               )}
             </View>
 
@@ -130,7 +132,9 @@ export default function Registration() {
                 name="lastname"
               />
               {errors.firstname && (
-                <Text style={styles.errors}>{errors.lastname.message}</Text>
+                <Text style={styles.halfInputErrors}>
+                  {errors.lastname.message}
+                </Text>
               )}
             </View>
           </View>
@@ -320,6 +324,12 @@ const styles = StyleSheet.create({
   },
   halfInput: {
     width: "43%",
+  },
+  halfInputErrors: {
+    fontSize: 10,
+    color: "red",
+    marginTop: 5,
+    marginLeft: 10,
   },
   header: {
     display: "flex",

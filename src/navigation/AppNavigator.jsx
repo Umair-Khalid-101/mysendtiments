@@ -7,7 +7,14 @@ import { NavigationContainer } from "@react-navigation/native";
 const Stack = createNativeStackNavigator();
 
 // SCREENS
-import { OnBoarding, SignUp, SignIn, Registration } from "../screens";
+import {
+  OnBoarding,
+  OnBoarding2,
+  OnBoarding3,
+  SignUp,
+  SignIn,
+  Registration,
+} from "../screens";
 
 export default function AppNavigator() {
   return (
@@ -16,6 +23,16 @@ export default function AppNavigator() {
         <Stack.Screen
           name="OnBoarding"
           component={OnBoarding}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="OnBoarding2"
+          component={OnBoarding2}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="OnBoarding3"
+          component={OnBoarding3}
           options={{ headerShown: false }}
         />
         <Stack.Screen

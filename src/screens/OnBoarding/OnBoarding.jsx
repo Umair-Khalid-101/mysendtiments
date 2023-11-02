@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
+
 // CONSTANTS
 import { font, colors } from "../../constants";
 
@@ -25,7 +26,7 @@ export default function OnBoarding() {
       <View style={styles.ButtonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.replace("SignUp")}
+          onPress={() => navigation.navigate("OnBoarding2")}
         >
           <Text style={styles.ButtonText}>Next</Text>
         </TouchableOpacity>
