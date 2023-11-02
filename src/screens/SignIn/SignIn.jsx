@@ -132,7 +132,9 @@ export default function SignIn() {
               </TouchableOpacity>
               <Text style={styles.RememberMeText}>Remember Me</Text>
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("ForgotPassword")}
+            >
               <Text style={styles.ForgotPasswordText}>Forgot Password</Text>
             </TouchableOpacity>
           </View>

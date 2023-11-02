@@ -7,7 +7,7 @@ import {
   ScrollView,
   KeyboardAvoidingView,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { useForm, Controller } from "react-hook-form";
@@ -16,6 +16,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { SelectList } from "react-native-dropdown-select-list";
+import PhoneInput from "react-native-phone-number-input";
 
 // CONSTANTS
 import { colors, font } from "../../constants";
@@ -25,6 +26,9 @@ export default function Registration() {
   const [isLoading, setIsLoading] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
   const [userType, setUserType] = useState();
+  const [value, setValue] = useState("");
+  const [formattedValue, setFormattedValue] = useState("");
+  const phoneInput = useRef();
 
   const userTypes = [
     { key: "Home/Office User", value: "Home/Office User" },
@@ -40,7 +44,13 @@ export default function Registration() {
       .string()
       .email("Please enter valid email")
       .required("Email Address is Required"),
-    password: yup.string().required("Password cannot be empty!"),
+    password: yup
+      .string()
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{12,}$/,
+        "Password is invalid. Please follow the instructions"
+      )
+      .required("Password cannot be empty!"),
     firstname: yup.string().required("FirstName cannot be empty!"),
     lastname: yup.string().required("LastName cannot be empty!"),
   });
@@ -55,6 +65,8 @@ export default function Registration() {
   });
 
   const onSubmit = async (data) => {
+    data.userType = userType;
+    data.phone = formattedValue;
     console.log(data);
   };
 
@@ -153,6 +165,22 @@ export default function Registration() {
           {errors.email && (
             <Text style={styles.errors}>{errors.email.message}</Text>
           )}
+
+          <View style={styles.PhoneInputContainer}>
+            <PhoneInput
+              ref={phoneInput}
+              defaultValue={value}
+              defaultCode="UA"
+              containerStyle={styles.ContainerPhoneInput}
+              textContainerStyle={styles.textContainer}
+              onChangeText={(text) => {
+                setValue(text);
+              }}
+              onChangeFormattedText={(text) => {
+                setFormattedValue(text);
+              }}
+            />
+          </View>
 
           <Controller
             control={control}
@@ -259,27 +287,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: "10%",
   },
-  ChechBoxContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: 5,
-  },
-  checkbox: {
-    width: 24,
-    height: 24,
-    borderWidth: 2,
-    borderRadius: 12,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  checked: {
-    backgroundColor: "#4CAF50",
-    borderColor: "#4CAF50",
-  },
   container: {
     flex: 1,
+    backgroundColor: colors.background,
+  },
+  ContainerPhoneInput: {
+    borderWidth: 1,
+    borderColor: colors.line,
+    height: 50,
+    width: "90%",
+    marginTop: "5%",
+    borderRadius: 12,
+    paddingLeft: 20,
+    alignSelf: "center",
+    fontFamily: font.medium,
+    fontSize: 14,
     backgroundColor: colors.background,
   },
   errors: {
@@ -379,6 +401,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 10,
+    marginTop: "3%",
   },
   passwordinput: {
     borderWidth: 1,
@@ -412,6 +435,11 @@ const styles = StyleSheet.create({
   passwordRulesBullets: {
     marginLeft: "4%",
     marginBottom: "2%",
+  },
+  PhoneInputContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
   PressableTextContainer: {
     display: "flex",
@@ -511,12 +539,20 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: colors.gray,
   },
+  textContainer: {
+    borderWidth: 1,
+    borderColor: colors.line,
+    height: 50,
+    width: "90%",
+    borderRadius: 12,
+    paddingLeft: 20,
+    alignSelf: "center",
+    fontFamily: font.medium,
+    fontSize: 14,
+  },
   toggleButton: {
     position: "absolute",
     right: 10,
-    top: -8,
-  },
-  unchecked: {
-    borderColor: "#757575",
+    top: -3,
   },
 });

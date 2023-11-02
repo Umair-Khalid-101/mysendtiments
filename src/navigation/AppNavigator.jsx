@@ -14,6 +14,10 @@ import {
   SignUp,
   SignIn,
   Registration,
+  ForgotPassword,
+  CreateNewPassword,
+  NewPassword,
+  PasswordSet,
 } from "../screens";
 
 export default function AppNavigator() {
@@ -43,6 +47,26 @@ export default function AppNavigator() {
         <Stack.Screen
           name="SignIn"
           component={SignIn}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ForgotPassword"
+          component={ForgotPassword}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CreateNewPassword"
+          component={CreateNewPassword}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="NewPassword"
+          component={NewPassword}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="PasswordSet"
+          component={PasswordSet}
           options={{ headerShown: false }}
         />
         <Stack.Screen

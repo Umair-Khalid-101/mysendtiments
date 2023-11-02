@@ -13,4 +13,5 @@ export const colors = {
   lightgray: "#CCCCCC",
   disabledButton: "#E8E3F6",
   passwordBox: "#DDF1F8",
+  checkColor: "#27AE60",
 };
