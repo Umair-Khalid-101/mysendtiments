@@ -8,3 +8,5 @@ export { default as ForgotPassword } from "./ForgotPassword/ForgotPassword";
 export { default as CreateNewPassword } from "./ForgotPassword/CreateNewPassword";
 export { default as NewPassword } from "./ForgotPassword/NewPassword";
 export { default as PasswordSet } from "./ForgotPassword/PasswordSet";
+export { default as Home } from "./Home/Home";
+export { default as SendTimentDetails } from "./SendtimentDetails/SendTimentDetails";

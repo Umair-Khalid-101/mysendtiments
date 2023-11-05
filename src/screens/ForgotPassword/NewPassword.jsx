@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     marginTop: "10%",
   },
   container: {
-    flex: "1",
+    flex: 1,
   },
   errors: {
     fontSize: 10,

@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     marginTop: "10%",
   },
   container: {
-    flex: "1",
+    flex: 1,
   },
   checkContainer: {
     marginTop: "5%",

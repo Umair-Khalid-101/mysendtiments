@@ -14,4 +14,29 @@ export const colors = {
   disabledButton: "#E8E3F6",
   passwordBox: "#DDF1F8",
   checkColor: "#27AE60",
+  headerColor: "#DDEAF8",
 };
+
+export const dummySendtiments = [
+  {
+    id: 1,
+    title: "2023 Christmas Gift",
+    date: "6 Aug 2023",
+    time: "8:00PM",
+    url: "https://youtu.be/KtlgYxa6BMU?si=-yPvhjGd_FH7lcCl",
+  },
+  {
+    id: 2,
+    title: "Michael Birthday Gift",
+    date: "6 Aug 2023",
+    time: "8:00PM",
+    url: "https://youtu.be/KtlgYxa6BMU?si=-yPvhjGd_FH7lcCl",
+  },
+  {
+    id: 3,
+    title: "Random Gift",
+    date: "6 Aug 2023",
+    time: "8:00PM",
+    url: "https://youtu.be/KtlgYxa6BMU?si=-yPvhjGd_FH7lcCl",
+  },
+];

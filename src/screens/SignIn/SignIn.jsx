@@ -53,6 +53,7 @@ export default function SignIn() {
   const onSubmit = async (data) => {
     data.remember = isChecked;
     console.log(data);
+    navigation.navigate("Home");
   };
   return (
     <SafeAreaView style={styles.container}>
