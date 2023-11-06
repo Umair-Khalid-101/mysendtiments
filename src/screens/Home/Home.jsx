@@ -4,15 +4,18 @@ import {
   View,
   TouchableOpacity,
   FlatList,
+  Modal,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
 // CONSTANTS
-import { colors, font, dummySendtiments } from "../../constants";
+import { colors, font, dummySendtiments, sortFilters } from "../../constants";
 
 // SVG
 import { GiftSvg } from "../../svgs";
@@ -22,10 +25,24 @@ import { Card } from "../../components";
 
 export default function Home() {
   const navigation = useNavigation();
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState("Newest to Oldest");
+
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
 
   const handlePress = (item) => {
     // console.log(item);
     navigation.navigate("SendTimentDetails", { item });
+  };
+
+  const handleFilter = (option) => {
+    setSelectedFilter(option);
   };
 
   return (
@@ -47,7 +64,55 @@ export default function Home() {
           </View>
         </View>
       </View>
-      <Text style={styles.createdText}>Created: </Text>
+      <View style={styles.createdAndFilter}>
+        <Text style={styles.createdText}>
+          Created: {dummySendtiments.length}
+        </Text>
+        <TouchableOpacity style={styles.filterButton} onPress={openModal}>
+          <MaterialCommunityIcons name="sort" size={24} color="black" />
+          <Text>Sort by</Text>
+        </TouchableOpacity>
+      </View>
+
+      <Modal
+        visible={modalVisible}
+        animationType="slide"
+        transparent={true}
+        onRequestClose={closeModal}
+      >
+        <SafeAreaView style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>Sort By</Text>
+            {sortFilters.map((filter) => (
+              <TouchableOpacity
+                key={filter.id}
+                style={styles.filterContainer}
+                onPress={() => handleFilter(filter.filter)}
+              >
+                <Text style={styles.filterOptionText}>{filter.filter}</Text>
+                {selectedFilter === filter.filter && (
+                  <View>
+                    <AntDesign
+                      name="check"
+                      size={24}
+                      style={styles.filterSelectedIcon}
+                    />
+                  </View>
+                )}
+              </TouchableOpacity>
+            ))}
+            <View style={styles.modelCloseButtonContainer}>
+              <TouchableOpacity
+                onPress={closeModal}
+                style={styles.modelCloseButton}
+              >
+                <Text style={styles.modalCloseButtonText}>Close Modal</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </SafeAreaView>
+      </Modal>
+
       <FlatList
         data={dummySendtiments}
         renderItem={({ item }) => (
@@ -57,7 +122,11 @@ export default function Home() {
         contentContainerStyle={styles.flatlistContainer}
         ItemSeparatorComponent={<View style={styles.itemSeperator}></View>}
         ListFooterComponent={<View style={styles.itemSeperator}></View>}
+        showsVerticalScrollIndicator={false}
       />
+      <TouchableOpacity style={styles.floatingButton}>
+        <Feather name="plus" size={24} color={colors.white} />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -69,8 +138,42 @@ const styles = StyleSheet.create({
   createdText: {
     fontFamily: font.medium,
     fontSize: 24,
-    marginTop: "5%",
+  },
+  createdAndFilter: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginHorizontal: "7%",
+    marginVertical: "5%",
+  },
+  filterButton: {
+    width: "40%",
+    height: 40,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: colors.line,
+    borderRadius: 8,
+    gap: 5,
+  },
+  filterContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: "3%",
     marginLeft: "7%",
+  },
+  filterOptionText: {
+    fontFamily: font.medium,
+    fontSize: 16,
+  },
+  filterSelectedIcon: {
+    marginRight: "7%",
+    color: colors.checkColor,
   },
   flatlistContainer: {
     display: "flex",
@@ -85,6 +188,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: "30%",
     marginTop: "10%",
+  },
+  floatingButton: {
+    position: "absolute",
+    bottom: 120,
+    right: 30,
+    height: 60,
+    width: 60,
+    borderRadius: "50%",
+    backgroundColor: colors.blue,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
   header: {
     height: 120,
@@ -113,6 +228,39 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 5,
+    marginLeft: "7%",
+  },
+  modalContainer: {
+    flex: 1,
+    backgroundColor: colors.white,
+  },
+  modalContent: {
+    marginTop: "10%",
+  },
+  modelCloseButton: {
+    width: "80%",
+    height: 50,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.blue,
+    borderRadius: 8,
+    marginTop: "10%",
+  },
+  modelCloseButtonContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  modalCloseButtonText: {
+    fontFamily: font.medium,
+    color: colors.white,
+  },
+  modalTitle: {
+    fontFamily: font.bold,
+    marginTop: "10%",
+    fontSize: 20,
     marginLeft: "7%",
   },
   subTitle: {

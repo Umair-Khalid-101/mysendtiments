@@ -40,3 +40,10 @@ export const dummySendtiments = [
     url: "https://youtu.be/KtlgYxa6BMU?si=-yPvhjGd_FH7lcCl",
   },
 ];
+
+export const sortFilters = [
+  { id: 1, filter: "Newest to Oldest" },
+  { id: 2, filter: "Oldest to Newest" },
+  { id: 3, filter: "Title (Ascending)" },
+  { id: 4, filter: "Name (Descending)" },
+];
