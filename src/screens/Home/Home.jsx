@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.flexRow}>
           <View style={styles.logoContainer}>
@@ -58,7 +58,7 @@ export default function Home() {
         ItemSeparatorComponent={<View style={styles.itemSeperator}></View>}
         ListFooterComponent={<View style={styles.itemSeperator}></View>}
       />
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -84,9 +84,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     gap: "30%",
+    marginTop: "10%",
   },
   header: {
-    height: 100,
+    height: 120,
     backgroundColor: colors.headerColor,
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
