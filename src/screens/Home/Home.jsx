@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    gap: "30%",
+    gap: 30,
     marginTop: "10%",
   },
   floatingButton: {
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
     right: 30,
     height: 60,
     width: 60,
-    borderRadius: "50%",
+    borderRadius: 30,
     backgroundColor: colors.blue,
     display: "flex",
     justifyContent: "center",
