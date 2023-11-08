@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
+import Toast from "react-native-toast-message";
 
 // APP NAVIGATOR
 import AppNavigator from "./src/navigation/AppNavigator";
@@ -28,6 +29,7 @@ export default function App() {
     <>
       <StatusBar style="auto" />
       <AppNavigator />
+      <Toast />
     </>
   );
 }

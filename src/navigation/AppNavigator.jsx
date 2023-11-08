@@ -20,26 +20,32 @@ import {
   PasswordSet,
   Home,
   SendTimentDetails,
+  CreateSendTiment,
+  EditSendTiment,
 } from "../screens";
 
 export default function AppNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          animation: "slide_from_right",
+        }}
+      >
         <Stack.Screen
           name="OnBoarding"
           component={OnBoarding}
-          options={{ headerShown: false }}
+          options={{ headerShown: false, animation: "slide_from_right" }}
         />
         <Stack.Screen
           name="OnBoarding2"
           component={OnBoarding2}
-          options={{ headerShown: false }}
+          options={{ headerShown: false, animation: "slide_from_right" }}
         />
         <Stack.Screen
           name="OnBoarding3"
           component={OnBoarding3}
-          options={{ headerShown: false }}
+          options={{ headerShown: false, animation: "slide_from_right" }}
         />
         <Stack.Screen
           name="SignUp"
@@ -84,6 +90,16 @@ export default function AppNavigator() {
         <Stack.Screen
           name="SendTimentDetails"
           component={SendTimentDetails}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CreateSendTiment"
+          component={CreateSendTiment}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="EditSendTiment"
+          component={EditSendTiment}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

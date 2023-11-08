@@ -10,3 +10,5 @@ export { default as NewPassword } from "./ForgotPassword/NewPassword";
 export { default as PasswordSet } from "./ForgotPassword/PasswordSet";
 export { default as Home } from "./Home/Home";
 export { default as SendTimentDetails } from "./SendtimentDetails/SendTimentDetails";
+export { default as CreateSendTiment } from "./CreateSendTiment/CreateSendTiment";
+export { default as EditSendTiment } from "./EditSendTiment/EditSendTiment";

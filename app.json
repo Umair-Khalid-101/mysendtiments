@@ -19,11 +19,24 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.umair_khalid.mysendtiments"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "extra": {}
+    "extra": {
+      "eas": {
+        "projectId": "cf06785a-e36d-434a-b78c-11294a59f04f"
+      }
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]
+    ]
   }
 }

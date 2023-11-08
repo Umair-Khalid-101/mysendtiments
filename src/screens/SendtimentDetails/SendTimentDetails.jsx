@@ -34,6 +34,12 @@ export default function () {
   const data = route.params?.item;
 
   //   console.log("Details: ", data);
+
+  const handleEdit = () => {
+    data.image = dummySendtiment;
+    navigation.navigate("EditSendTiment", { item: data });
+  };
+
   return (
     <View style={styles.container}>
       <ScrollView
@@ -92,7 +98,10 @@ export default function () {
         </View>
 
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.editButton}>
+          <TouchableOpacity
+            style={styles.editButton}
+            onPress={() => handleEdit()}
+          >
             <Text style={styles.editText}>Edit SendTiment</Text>
           </TouchableOpacity>
         </View>

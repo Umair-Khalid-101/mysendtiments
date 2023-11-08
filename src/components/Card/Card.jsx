@@ -26,13 +26,13 @@ export default function Card({ item, onPress }) {
       <Text style={styles.title}>{item.title}</Text>
       <View style={styles.flexRow}>
         <View style={styles.iconTextContainer}>
-          <Feather name="calendar" size={20} color={colors.gray} />
+          <Feather name="calendar" size={18} color={colors.gray} />
           <Text style={styles.lightText}>{item.date}</Text>
         </View>
         <View style={styles.iconTextContainer}>
           <MaterialCommunityIcons
             name="clock-time-eight-outline"
-            size={20}
+            size={18}
             color={colors.gray}
           />
           <Text style={styles.lightText}>{item.time}</Text>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 10,
     marginLeft: 20,
-    gap: 10,
+    gap: 30,
   },
   iconTextContainer: {
     display: "flex",
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   shadowBox: {
     width: width * 0.9,
-    height: 300,
+    height: 350,
     backgroundColor: "white",
     borderRadius: 10, // Optional: Add borderRadius for rounded corners
     shadowColor: "#000",

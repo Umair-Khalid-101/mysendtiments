@@ -124,7 +124,10 @@ export default function Home() {
         ListFooterComponent={<View style={styles.itemSeperator}></View>}
         showsVerticalScrollIndicator={false}
       />
-      <TouchableOpacity style={styles.floatingButton}>
+      <TouchableOpacity
+        style={styles.floatingButton}
+        onPress={() => navigation.navigate("CreateSendTiment")}
+      >
         <Feather name="plus" size={24} color={colors.white} />
       </TouchableOpacity>
     </View>
@@ -191,7 +194,7 @@ const styles = StyleSheet.create({
   },
   floatingButton: {
     position: "absolute",
-    bottom: 120,
+    bottom: 60,
     right: 30,
     height: 60,
     width: 60,
@@ -231,8 +234,9 @@ const styles = StyleSheet.create({
     marginLeft: "7%",
   },
   modalContainer: {
-    flex: 1,
+    height: 360,
     backgroundColor: colors.white,
+    borderRadius: 30,
   },
   modalContent: {
     marginTop: "10%",
