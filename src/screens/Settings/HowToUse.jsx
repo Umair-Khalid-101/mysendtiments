@@ -1,9 +1,9 @@
 import {
+  ScrollView,
   StyleSheet,
   Text,
-  View,
-  ScrollView,
   TouchableOpacity,
+  View,
 } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -13,11 +13,11 @@ import { Ionicons } from "@expo/vector-icons";
 // CONSTANTS
 import { font, colors } from "../../constants";
 
-export default function AccountSettings() {
+export default function HowToUse() {
   const navigation = useNavigation();
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView>
       <ScrollView style={styles.scrollContainer}>
         <View style={styles.header}>
           <TouchableOpacity
@@ -26,7 +26,7 @@ export default function AccountSettings() {
           >
             <Ionicons name="ios-chevron-back" size={28} color="black" />
           </TouchableOpacity>
-          <Text style={styles.headerText}>Account Settings</Text>
+          <Text style={styles.headerText}>How To Use</Text>
         </View>
       </ScrollView>
     </SafeAreaView>

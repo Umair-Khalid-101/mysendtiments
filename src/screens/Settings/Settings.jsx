@@ -71,6 +71,18 @@ export default function Settings() {
       <View>
         <TouchableOpacity
           style={styles.flexView}
+          onPress={() => navigation.navigate("HowToUse")}
+        >
+          <Entypo name="info" size={24} color="black" />
+          <Text style={styles.title}>How To Use</Text>
+          <Entypo name="chevron-small-right" size={32} color="black" />
+        </TouchableOpacity>
+        <View style={styles.itemSeperator}></View>
+      </View>
+
+      <View>
+        <TouchableOpacity
+          style={styles.flexView}
           onPress={() => navigation.navigate("SignUp")}
         >
           <AntDesign name="poweroff" size={30} color="red" />

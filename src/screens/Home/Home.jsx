@@ -106,7 +106,7 @@ export default function Home() {
                 onPress={closeModal}
                 style={styles.modelCloseButton}
               >
-                <Text style={styles.modalCloseButtonText}>Close Modal</Text>
+                <Text style={styles.modalCloseButtonText}>Close</Text>
               </TouchableOpacity>
             </View>
           </View>

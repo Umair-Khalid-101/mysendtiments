@@ -17,3 +17,4 @@ export { default as AccountSettings } from "./Settings/AccountSettings";
 export { default as EditAccountSettings } from "./Settings/EditAccountSettings";
 export { default as Terms } from "./Settings/Terms";
 export { default as PrivacyPolicy } from "./Settings/PrivacyPolicy";
+export { default as HowToUse } from "./Settings/HowToUse";

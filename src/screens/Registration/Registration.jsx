@@ -170,7 +170,7 @@ export default function Registration() {
             <PhoneInput
               ref={phoneInput}
               defaultValue={value}
-              defaultCode="UA"
+              defaultCode="US"
               containerStyle={styles.ContainerPhoneInput}
               textContainerStyle={styles.textContainer}
               onChangeText={(text) => {
@@ -294,7 +294,7 @@ const styles = StyleSheet.create({
   ContainerPhoneInput: {
     borderWidth: 1,
     borderColor: colors.line,
-    height: 50,
+    height: 60,
     width: "90%",
     marginTop: "5%",
     borderRadius: 12,
@@ -542,13 +542,13 @@ const styles = StyleSheet.create({
   textContainer: {
     borderWidth: 1,
     borderColor: colors.line,
-    height: 50,
+    height: 60,
     width: "90%",
     borderRadius: 12,
     paddingLeft: 20,
     alignSelf: "center",
     fontFamily: font.medium,
-    fontSize: 14,
+    fontSize: 12,
   },
   toggleButton: {
     position: "absolute",

@@ -27,6 +27,7 @@ import {
   EditAccountSettings,
   PrivacyPolicy,
   Terms,
+  HowToUse,
 } from "../screens";
 
 export default function AppNavigator() {
@@ -130,6 +131,11 @@ export default function AppNavigator() {
         <Stack.Screen
           name="PrivacyPolicy"
           component={PrivacyPolicy}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="HowToUse"
+          component={HowToUse}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
