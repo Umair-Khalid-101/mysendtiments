@@ -22,6 +22,11 @@ import {
   SendTimentDetails,
   CreateSendTiment,
   EditSendTiment,
+  Settings,
+  AccountSettings,
+  EditAccountSettings,
+  PrivacyPolicy,
+  Terms,
 } from "../screens";
 
 export default function AppNavigator() {
@@ -100,6 +105,31 @@ export default function AppNavigator() {
         <Stack.Screen
           name="EditSendTiment"
           component={EditSendTiment}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Settings"
+          component={Settings}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="AccountSettings"
+          component={AccountSettings}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="EditAccountSettings"
+          component={EditAccountSettings}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Terms"
+          component={Terms}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="PrivacyPolicy"
+          component={PrivacyPolicy}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

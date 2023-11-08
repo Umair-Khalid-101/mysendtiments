@@ -58,7 +58,7 @@ export default function Home() {
             <TouchableOpacity onPress={() => console.log("Search")}>
               <Feather name="search" size={32} color="black" />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => console.log("Settings")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
               <Ionicons name="settings-outline" size={32} color="black" />
             </TouchableOpacity>
           </View>

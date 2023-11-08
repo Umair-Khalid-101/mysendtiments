@@ -12,3 +12,8 @@ export { default as Home } from "./Home/Home";
 export { default as SendTimentDetails } from "./SendtimentDetails/SendTimentDetails";
 export { default as CreateSendTiment } from "./CreateSendTiment/CreateSendTiment";
 export { default as EditSendTiment } from "./EditSendTiment/EditSendTiment";
+export { default as Settings } from "./Settings/Settings";
+export { default as AccountSettings } from "./Settings/AccountSettings";
+export { default as EditAccountSettings } from "./Settings/EditAccountSettings";
+export { default as Terms } from "./Settings/Terms";
+export { default as PrivacyPolicy } from "./Settings/PrivacyPolicy";

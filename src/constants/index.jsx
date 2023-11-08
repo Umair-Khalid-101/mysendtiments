@@ -1,3 +1,5 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 export const font = {
   medium: "SfMedium",
   bold: "SfBold",
