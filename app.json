@@ -4,10 +4,10 @@
     "slug": "MySendTiments",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/adaptive-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/adaptive-icon.png",
       "resizeMode": "cover",
       "backgroundColor": "##F5F5F7"
     },
@@ -23,7 +23,7 @@
       "permissions": ["android.permission.RECORD_AUDIO"]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/adaptive-icon.png"
     },
     "extra": {},
     "plugins": [
