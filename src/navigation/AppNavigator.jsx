@@ -28,6 +28,7 @@ import {
   PrivacyPolicy,
   Terms,
   HowToUse,
+  SearchSendTiments,
 } from "../screens";
 
 export default function AppNavigator() {
@@ -106,6 +107,11 @@ export default function AppNavigator() {
         <Stack.Screen
           name="EditSendTiment"
           component={EditSendTiment}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SearchSendTiments"
+          component={SearchSendTiments}
           options={{ headerShown: false }}
         />
         <Stack.Screen

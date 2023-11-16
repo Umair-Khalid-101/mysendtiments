@@ -9,6 +9,7 @@ import {
   Image,
   ImageBackground,
   Modal,
+  Dimensions,
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -21,9 +22,12 @@ import { Ionicons } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import Toast from "react-native-toast-message";
+import isUrl from "is-url";
 
 // CONSTANTS
 import { colors, font } from "../../constants";
+
+const { height } = Dimensions.get("window");
 
 export default function CreateSendTiment() {
   const navigation = useNavigation();
@@ -71,6 +75,19 @@ export default function CreateSendTiment() {
       });
       return;
     }
+
+    const urlCheck = isUrl(data.url);
+    console.log(urlCheck);
+    if (urlCheck === false) {
+      Toast.show({
+        type: "error",
+        text1: "URL Error",
+        text2: "Provided URL is not valid",
+        position: "top",
+      });
+      return;
+    }
+
     console.log(data);
     setModalVisible(true);
   };
@@ -106,7 +123,7 @@ export default function CreateSendTiment() {
             render={({ field: { onChange, value } }) => (
               <TextInput
                 style={styles.input}
-                onChangeText={(value) => onChange(value.trim())}
+                onChangeText={(value) => onChange(value)}
                 value={value}
                 placeholder="SendTiment Title"
               />
@@ -122,7 +139,7 @@ export default function CreateSendTiment() {
             render={({ field: { onChange, value } }) => (
               <TextInput
                 style={styles.input}
-                onChangeText={(value) => onChange(value.trim())}
+                onChangeText={(value) => onChange(value)}
                 value={value}
                 placeholder="Desired URL"
               />
@@ -265,7 +282,7 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "10%",
+    marginTop: "2%",
   },
   header: {
     display: "flex",
@@ -337,16 +354,17 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   modalContainer: {
-    height: 300,
+    height: height * 0.5,
     backgroundColor: colors.white,
     borderRadius: 30,
+    marginTop: "auto",
   },
   modalContent: {
-    marginTop: "10%",
+    marginTop: "2%",
   },
   modelCloseButton: {
     width: "80%",
-    height: 50,
+    height: 40,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -359,10 +377,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    marginTop: "2%",
   },
   modalCloseButtonText: {
     fontFamily: font.medium,
     color: colors.white,
+    fontSize: 14,
   },
   modalTitle: {
     fontFamily: font.bold,

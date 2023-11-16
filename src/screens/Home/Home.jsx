@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   FlatList,
   Modal,
+  Dimensions,
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -22,6 +23,8 @@ import { GiftSvg } from "../../svgs";
 
 // COMPONENTS
 import { Card } from "../../components";
+
+const { height } = Dimensions.get("window");
 
 export default function Home() {
   const navigation = useNavigation();
@@ -55,7 +58,9 @@ export default function Home() {
             <Text style={styles.subTitle}>TM</Text>
           </View>
           <View style={styles.iconsContainer}>
-            <TouchableOpacity onPress={() => console.log("Search")}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("SearchSendTiments")}
+            >
               <Feather name="search" size={32} color="black" />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
@@ -234,16 +239,17 @@ const styles = StyleSheet.create({
     marginLeft: "7%",
   },
   modalContainer: {
-    height: 360,
+    height: height * 0.4,
     backgroundColor: colors.white,
     borderRadius: 30,
+    marginTop: "auto",
   },
   modalContent: {
-    marginTop: "10%",
+    marginTop: "2%",
   },
   modelCloseButton: {
     width: "80%",
-    height: 50,
+    height: 40,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -260,10 +266,11 @@ const styles = StyleSheet.create({
   modalCloseButtonText: {
     fontFamily: font.medium,
     color: colors.white,
+    fontSize: 12,
   },
   modalTitle: {
     fontFamily: font.bold,
-    marginTop: "10%",
+    marginTop: "2%",
     fontSize: 20,
     marginLeft: "7%",
   },

@@ -17,15 +17,20 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
-      "permissions": ["android.permission.RECORD_AUDIO"]
+      "permissions": ["android.permission.RECORD_AUDIO"],
+      "package": "com.mysendtiments.MySendTiments"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "extra": {},
+    "extra": {
+      "eas": {
+        "projectId": "1f01888f-f37f-4350-b05a-4ff502229f39"
+      }
+    },
     "plugins": [
       [
         "expo-image-picker",

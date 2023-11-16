@@ -28,6 +28,28 @@ export default function PrivacyPolicy() {
           </TouchableOpacity>
           <Text style={styles.headerText}>Privacy Policy</Text>
         </View>
+        <View style={styles.PrivacyPolicyContainer}>
+          <Text>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo
+            dolores ea distinctio suscipit facilis quidem, quaerat unde aliquid
+            ipsam, praesentium voluptatem mollitia cumque enim sequi ipsum
+            sapiente eaque beatae consequuntur. Ipsa, veritatis consectetur
+            delectus accusamus nihil quae ducimus suscipit nemo, omnis
+            praesentium ea aperiam error fuga voluptatem est quis rerum magni
+            amet atque nisi esse dolorum asperiores a. Velit, eius. Vel illo
+            alias expedita minima temporibus veniam, repellendus incidunt error
+            soluta id vero delectus reprehenderit suscipit. Temporibus, ipsam,
+            veniam exercitationem optio, assumenda neque fuga excepturi
+            dignissimos debitis est nostrum nemo? Iusto commodi voluptates
+            officia, eum quod itaque delectus! Laudantium delectus provident,
+            fugit beatae ipsa consequatur nostrum sed animi laboriosam minus
+            officiis! Doloremque iste modi facere praesentium ea culpa tenetur
+            deserunt! Placeat, cum minus? Facilis temporibus cumque sed qui
+            tempora sint deleniti ipsam doloremque voluptatem, perspiciatis
+            eligendi reprehenderit eveniet harum quam, quo aperiam autem iusto
+            officia in? Eveniet quidem distinctio illo.
+          </Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -50,6 +72,11 @@ const styles = StyleSheet.create({
   headerText: {
     fontFamily: font.medium,
     fontSize: 24,
+  },
+  PrivacyPolicyContainer: {
+    marginRight: "5%",
+    marginLeft: "7%",
+    marginTop: "5%",
   },
   scrollContainer: {
     flexGrow: 1,

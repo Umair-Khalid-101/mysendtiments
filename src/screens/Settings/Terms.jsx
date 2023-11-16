@@ -28,6 +28,28 @@ export default function Terms() {
           </TouchableOpacity>
           <Text style={styles.headerText}>Terms & Conditions</Text>
         </View>
+        <View style={styles.termsContainer}>
+          <Text>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+            praesentium labore voluptatum, quam optio assumenda porro
+            consequatur sed vitae eligendi velit ut cupiditate amet quis
+            explicabo aperiam libero iste soluta. Molestiae rerum aspernatur
+            incidunt porro nemo iste id repudiandae laborum excepturi fuga,
+            veritatis doloremque. Consectetur minus accusantium porro quam sunt
+            expedita, voluptatem, sit dicta, corporis officiis officia ut
+            obcaecati dolores? Assumenda earum facilis nobis saepe impedit vitae
+            voluptas laudantium eius totam, animi unde quaerat nostrum. Dolore
+            praesentium velit adipisci officiis obcaecati libero quasi fuga, a,
+            maiores ea esse saepe quae? Repellendus natus dignissimos distinctio
+            quidem architecto cumque impedit reiciendis voluptates, rem ex porro
+            maxime atque id dolor suscipit perferendis accusamus aspernatur,
+            quas maiores ipsam nisi sit cum delectus? Eaque, necessitatibus.
+            Adipisci et est laboriosam soluta ea iusto iure nihil facilis
+            voluptatibus nam, libero deserunt veritatis dolor non optio animi
+            nostrum quibusdam vero reiciendis rem amet tenetur nulla alias.
+            Exercitationem, nisi.
+          </Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -53,5 +75,10 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     flexGrow: 1,
+  },
+  termsContainer: {
+    marginRight: "5%",
+    marginLeft: "7%",
+    marginTop: "5%",
   },
 });

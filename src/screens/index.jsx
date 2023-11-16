@@ -18,3 +18,4 @@ export { default as EditAccountSettings } from "./Settings/EditAccountSettings";
 export { default as Terms } from "./Settings/Terms";
 export { default as PrivacyPolicy } from "./Settings/PrivacyPolicy";
 export { default as HowToUse } from "./Settings/HowToUse";
+export { default as SearchSendTiments } from "./SearchSendTiments/SearchSendTiments";

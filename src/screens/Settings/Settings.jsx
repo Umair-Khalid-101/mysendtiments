@@ -24,7 +24,7 @@ export default function Settings() {
         <Text style={styles.headerText}>Settings</Text>
       </View>
 
-      <View>
+      {/* <View>
         <TouchableOpacity
           style={styles.flexView}
           onPress={() => navigation.navigate("AccountSettings")}
@@ -38,16 +38,16 @@ export default function Settings() {
           <Entypo name="chevron-small-right" size={32} color="black" />
         </TouchableOpacity>
         <View style={styles.itemSeperator}></View>
-      </View>
+      </View> */}
 
       <View>
         <TouchableOpacity
           style={styles.flexView}
           onPress={() => navigation.navigate("Terms")}
         >
-          <AntDesign name="filetext1" size={32} color="black" />
+          <AntDesign name="filetext1" size={20} color="black" />
           <Text style={styles.title}>Terms & Conditions</Text>
-          <Entypo name="chevron-small-right" size={32} color="black" />
+          <Entypo name="chevron-small-right" size={24} color="black" />
         </TouchableOpacity>
         <View style={styles.itemSeperator}></View>
       </View>
@@ -59,11 +59,11 @@ export default function Settings() {
         >
           <MaterialCommunityIcons
             name="file-lock-outline"
-            size={32}
+            size={24}
             color="black"
           />
           <Text style={styles.title}>Privacy Policy</Text>
-          <Entypo name="chevron-small-right" size={32} color="black" />
+          <Entypo name="chevron-small-right" size={24} color="black" />
         </TouchableOpacity>
         <View style={styles.itemSeperator}></View>
       </View>
@@ -75,7 +75,7 @@ export default function Settings() {
         >
           <Entypo name="info" size={24} color="black" />
           <Text style={styles.title}>How To Use</Text>
-          <Entypo name="chevron-small-right" size={32} color="black" />
+          <Entypo name="chevron-small-right" size={24} color="black" />
         </TouchableOpacity>
         <View style={styles.itemSeperator}></View>
       </View>
@@ -85,7 +85,7 @@ export default function Settings() {
           style={styles.flexView}
           onPress={() => navigation.navigate("SignUp")}
         >
-          <AntDesign name="poweroff" size={30} color="red" />
+          <AntDesign name="poweroff" size={24} color="red" />
           <Text style={styles.logOut}>Log Out</Text>
         </TouchableOpacity>
       </View>
@@ -131,12 +131,12 @@ const styles = StyleSheet.create({
   logOut: {
     width: "65%",
     fontFamily: font.medium,
-    fontSize: 18,
+    fontSize: 14,
     color: "red",
   },
   title: {
     width: "65%",
     fontFamily: font.medium,
-    fontSize: 18,
+    fontSize: 14,
   },
 });

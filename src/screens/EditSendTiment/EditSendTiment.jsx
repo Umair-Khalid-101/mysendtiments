@@ -9,6 +9,7 @@ import {
   Image,
   ImageBackground,
   Modal,
+  Dimensions,
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -27,6 +28,8 @@ import { colors, font } from "../../constants";
 
 // DUMMY PICTURE
 import dummySendtiment from "../../../assets/images/Sendtiment1.png";
+
+const { height } = Dimensions.get("window");
 
 export default function EditSendTiment() {
   const navigation = useNavigation();
@@ -284,7 +287,7 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "10%",
+    marginTop: "2%",
   },
   header: {
     display: "flex",
@@ -357,16 +360,17 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   modalContainer: {
-    height: 300,
+    height: height * 0.5,
     backgroundColor: colors.white,
     borderRadius: 30,
+    marginTop: "auto",
   },
   modalContent: {
-    marginTop: "10%",
+    marginTop: "2%",
   },
   modelCloseButton: {
     width: "80%",
-    height: 50,
+    height: 40,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -383,6 +387,7 @@ const styles = StyleSheet.create({
   modalCloseButtonText: {
     fontFamily: font.medium,
     color: colors.white,
+    fontSize: 14,
   },
   modalTitle: {
     fontFamily: font.bold,
